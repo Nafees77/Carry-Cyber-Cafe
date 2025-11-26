@@ -1,6 +1,7 @@
 import { collection, doc, getDoc, getDocs, orderBy, query } from 'firebase/firestore';
 import { db } from './firebase';
 import type { 
+  BannerSettings,
   ChatbotSettings,
   Faq,
   GeneralSettings,
@@ -47,6 +48,15 @@ export const defaultGeneralSettings: GeneralSettings = {
   footerText: 'Your premier destination for internet services, gaming, and digital solutions.'
 };
 
+export const defaultBannerSettings: BannerSettings = {
+  desktopBanner: PlaceHolderImages.find(p => p.id === 'banner-desktop')?.imageUrl || '',
+  tabletBanner: PlaceHolderImages.find(p => p.id === 'banner-tablet')?.imageUrl || '',
+  mobileBanner: PlaceHolderImages.find(p => p.id === 'banner-mobile')?.imageUrl || '',
+  bannerHeightDesktop: 400,
+  bannerHeightTablet: 300,
+  bannerHeightMobile: 200,
+};
+
 export const defaultChatbotSettings: ChatbotSettings = {
   enabled: true,
   chatbotIconUrl: PlaceHolderImages.find(p => p.id === 'chatbot-icon')?.imageUrl || '',
@@ -60,6 +70,7 @@ export async function getWebsiteData() {
   try {
     const [
       general,
+      banners,
       chatbot,
       services,
       whyChooseUs,
@@ -69,6 +80,7 @@ export async function getWebsiteData() {
       socialLinks,
     ] = await Promise.all([
       getDocument<GeneralSettings>('websiteSettings', 'general'),
+      getDocument<BannerSettings>('websiteSettings', 'banners'),
       getDocument<ChatbotSettings>('websiteSettings', 'chatbot'),
       getCollection<Service>('services', 'order'),
       getCollection<WhyChooseUsItem>('whyChooseUs', 'order'),
@@ -81,6 +93,7 @@ export async function getWebsiteData() {
     return {
       settings: {
         general: general || defaultGeneralSettings,
+        banners: banners || defaultBannerSettings,
         chatbot: chatbot || defaultChatbotSettings,
       },
       services,

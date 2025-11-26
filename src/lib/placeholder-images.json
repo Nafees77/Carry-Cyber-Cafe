@@ -15,13 +15,13 @@
     {
       "id": "banner-tablet",
       "description": "Tablet banner for the main page",
-      "imageUrl": "https://images.unsplash.com/photo-1726842172813-55c6e284f8b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwZW9wbGUlMjB1c2luZyUyMGNvbXB1dGVyc3xlbnwwfHx8fDE3NjQxNDI4NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1636885416608-da0caeae870f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGVvcGxlJTIwdXNpbmclMjBjb21wdXRlcnN8ZW58MHx8fHwxNzY0MTQyODU3fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "people using computers"
     },
     {
       "id": "banner-mobile",
       "description": "Mobile banner for the main page",
-      "imageUrl": "https://images.unsplash.com/photo-1703355685626-57abd3bfbd95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtb2Rlcm4lMjB3b3Jrc3BhY2V8ZW58MHx8fHwxNzY0MDc5MzI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1623679072629-3aaa0192a391?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxtb2Rlcm4lMjB3b3Jrc3BhY2V8ZW58MHx8fHwxNzY0MDc5MzI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "modern workspace"
     },
     {

@@ -12,6 +12,15 @@ export interface GeneralSettings {
   footerText: string;
 }
 
+export interface BannerSettings {
+  desktopBanner: string;
+  tabletBanner: string;
+  mobileBanner: string;
+  bannerHeightDesktop: number;
+  bannerHeightTablet: number;
+  bannerHeightMobile: number;
+}
+
 export interface ChatbotSettings {
   enabled: boolean;
   chatbotIconUrl: string;

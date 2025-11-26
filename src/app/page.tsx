@@ -1,5 +1,6 @@
 import { getWebsiteData } from '@/lib/firestore';
 import Header from '@/components/layout/Header';
+import MainBanner from '@/components/sections/MainBanner';
 import Services from '@/components/sections/Services';
 import WhyChooseUs from '@/components/sections/WhyChooseUs';
 import Reviews from '@/components/sections/Reviews';
@@ -9,7 +10,7 @@ import Footer from '@/components/layout/Footer';
 import Chatbot from '@/components/chatbot/Chatbot';
 import { Suspense } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
-import { defaultGeneralSettings, defaultChatbotSettings } from '@/lib/firestore';
+import { defaultGeneralSettings, defaultChatbotSettings, defaultBannerSettings } from '@/lib/firestore';
 
 export const revalidate = 60; // Revalidate data every 60 seconds
 
@@ -18,6 +19,7 @@ export default async function Home() {
 
   const settings = data?.settings ?? {
     general: defaultGeneralSettings,
+    banners: defaultBannerSettings,
     chatbot: defaultChatbotSettings,
   };
   const services = data?.services ?? [];
@@ -32,7 +34,11 @@ export default async function Home() {
       <Suspense fallback={<Skeleton className="h-16 w-full" />}>
         <Header settings={settings.general} quickLinks={quickLinks} />
       </Suspense>
-      <main className="flex-1 container mx-auto">
+      <main className="flex-1">
+        <Suspense fallback={<Skeleton className="h-[400px] w-full" />}>
+          <MainBanner settings={settings.banners} />
+        </Suspense>
+
         <Suspense fallback={<PageSectionSkeleton />}>
           <Services services={services} />
         </Suspense>
@@ -61,7 +67,7 @@ export default async function Home() {
 }
 
 const PageSectionSkeleton = () => (
-  <div className="container py-12 md:py-20">
+  <div className="container mx-auto py-12 md:py-20">
     <Skeleton className="h-8 w-1/3 mx-auto mb-8" />
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
       <Skeleton className="h-48 w-full" />
