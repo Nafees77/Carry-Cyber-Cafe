@@ -10,6 +10,23 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
+// Validate Firebase config
+const missingConfig = Object.entries(firebaseConfig)
+  .filter(([key, value]) => !value)
+  .map(([key]) => key);
+
+if (missingConfig.length > 0) {
+    const errorMessage = `Missing Firebase configuration. Please set the following environment variables: ${missingConfig.join(', ')}. You can find these values in your Firebase project settings.`;
+    if (typeof window === 'undefined') {
+        // Server-side error
+        console.error(errorMessage);
+    } else {
+        // Client-side error
+        throw new Error(errorMessage);
+    }
+}
+
+
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const db = getFirestore(app);
 
