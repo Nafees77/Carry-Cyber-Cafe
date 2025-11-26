@@ -1,3 +1,34 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "logo",
+      "description": "Carry Cyber Cafe Logo",
+      "imageUrl": "https://images.unsplash.com/photo-1574175250182-dd62534d547f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsb2dvJTIwY3liZXJjYWZlfGVufDB8fHx8MTc2NDE0Mjg1N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "logo cybercafe"
+    },
+    {
+      "id": "banner-desktop",
+      "description": "Desktop banner for the main page",
+      "imageUrl": "https://images.unsplash.com/photo-1599548291260-8a88e3d3b095?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjeWJlciUyMGNhZmUlMjBpbnRlcmlvcnxlbnwwfHx8fDE3NjQxNDI4NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cyber cafe interior"
+    },
+    {
+      "id": "banner-tablet",
+      "description": "Tablet banner for the main page",
+      "imageUrl": "https://images.unsplash.com/photo-1726842172813-55c6e284f8b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwZW9wbGUlMjB1c2luZyUyMGNvbXB1dGVyc3xlbnwwfHx8fDE3NjQxNDI4NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "people using computers"
+    },
+    {
+      "id": "banner-mobile",
+      "description": "Mobile banner for the main page",
+      "imageUrl": "https://images.unsplash.com/photo-1703355685626-57abd3bfbd95?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxtb2Rlcm4lMjB3b3Jrc3BhY2V8ZW58MHx8fHwxNzY0MDc5MzI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern workspace"
+    },
+    {
+      "id": "chatbot-icon",
+      "description": "Floating chatbot icon",
+      "imageUrl": "https://images.unsplash.com/photo-1737894543924-15e1ff7adbdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjaGF0JTIwaWNvbnxlbnwwfHx8fDE3NjQxNDI4NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chat icon"
+    }
+  ]
 }
