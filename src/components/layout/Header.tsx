@@ -48,19 +48,19 @@ export default function Header({ settings, quickLinks }: HeaderProps) {
         isScrolled ? 'border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60' : 'bg-transparent'
       )}
     >
-      <div className="container flex h-16 items-center justify-between">
+      <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           {settings.logoUrl ? (
             <Image
               src={settings.logoUrl}
               alt={`${settings.siteName} Logo`}
-              width={120}
-              height={40}
-              className="h-8 w-auto object-contain"
+              width={180}
+              height={60}
+              className="h-12 w-auto object-contain"
               data-ai-hint="logo"
             />
           ) : (
-            <span className="font-bold">{settings.siteName}</span>
+            <span className="font-bold text-xl">{settings.siteName}</span>
           )}
         </Link>
 
@@ -80,7 +80,7 @@ export default function Header({ settings, quickLinks }: HeaderProps) {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <SheetHeader className="p-6">
+              <SheetHeader className="p-6 border-b">
                 <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
                 <div className="flex items-center justify-between">
                    <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
@@ -88,12 +88,12 @@ export default function Header({ settings, quickLinks }: HeaderProps) {
                         <Image
                           src={settings.logoUrl}
                           alt={`${settings.siteName} Logo`}
-                          width={120}
-                          height={40}
-                          className="h-8 w-auto object-contain"
+                          width={150}
+                          height={50}
+                          className="h-10 w-auto object-contain"
                         />
                       ) : (
-                        <span className="font-bold">{settings.siteName}</span>
+                        <span className="font-bold text-lg">{settings.siteName}</span>
                       )}
                     </Link>
                     <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
@@ -102,7 +102,7 @@ export default function Header({ settings, quickLinks }: HeaderProps) {
                     </Button>
                 </div>
               </SheetHeader>
-              <div className="p-6 pt-0">
+              <div className="p-6 pt-6">
                 <NavLinks className="flex-col items-start space-y-4 text-lg" />
                  <Button asChild className="w-full mt-8">
                     <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>

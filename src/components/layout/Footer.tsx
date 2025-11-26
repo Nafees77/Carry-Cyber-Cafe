@@ -27,13 +27,13 @@ export default function Footer({ settings, quickLinks, socialLinks }: FooterProp
                 <Image
                   src={settings.logoUrl}
                   alt={`${settings.siteName} Logo`}
-                  width={150}
-                  height={50}
-                  className="h-10 w-auto object-contain invert brightness-0"
+                  width={200}
+                  height={65}
+                  className="h-14 w-auto object-contain invert brightness-0"
                   data-ai-hint="logo"
                 />
               ) : (
-                <span className="font-bold text-white">{settings.siteName}</span>
+                <span className="font-bold text-white text-xl">{settings.siteName}</span>
               )}
             </Link>
             <p className="max-w-md text-sm text-gray-400">
