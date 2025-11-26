@@ -27,6 +27,15 @@ function SubmitButton() {
   );
 }
 
+const isValidUrl = (url: string) => {
+  try {
+    new URL(url);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
 export default function Chatbot({ settings }: ChatbotProps) {
   const [state, dispatch] = useActionState(submitChatbotForm, { success: false });
   const { toast } = useToast();
@@ -52,6 +61,8 @@ export default function Chatbot({ settings }: ChatbotProps) {
     return null;
   }
 
+  const showIcon = settings.chatbotIconUrl && isValidUrl(settings.chatbotIconUrl);
+
   return (
     <div className="fixed bottom-6 right-6 z-50">
       <Popover>
@@ -61,7 +72,7 @@ export default function Chatbot({ settings }: ChatbotProps) {
             className="h-14 w-14 rounded-full bg-primary shadow-lg transition-transform hover:scale-110"
             aria-label="Open chat"
           >
-            {settings.chatbotIconUrl ? (
+            {showIcon ? (
               <Image
                 src={settings.chatbotIconUrl}
                 alt="Chatbot Icon"
