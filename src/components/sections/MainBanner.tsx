@@ -62,20 +62,20 @@ export default function MainBanner({ settings }: MainBannerProps) {
           }
         `}</style>
         <div className="banner-container relative w-full h-full">
-            <picture>
-                <source media="(min-width: 1024px)" srcSet={desktopBannerSrc} />
-                <source media="(min-width: 768px)" srcSet={tabletBannerSrc} />
-                {mobileBannerSrc && (
-                  <Image
-                      src={mobileBannerSrc}
-                      alt="Carry Cyber Cafe interior"
-                      fill
-                      priority
-                      className="object-cover"
-                      data-ai-hint="cyber cafe interior"
-                  />
-                )}
-            </picture>
+          <picture>
+            {desktopBannerSrc && <source media="(min-width: 1024px)" srcSet={desktopBannerSrc} />}
+            {tabletBannerSrc && <source media="(min-width: 768px)" srcSet={tabletBannerSrc} />}
+            {mobileBannerSrc && (
+              <Image
+                src={mobileBannerSrc}
+                alt="Carry Cyber Cafe interior"
+                fill
+                priority
+                className="object-cover"
+                data-ai-hint="cyber cafe interior"
+              />
+            )}
+          </picture>
         </div>
       </div>
     </section>
