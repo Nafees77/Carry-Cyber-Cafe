@@ -23,14 +23,18 @@ export default function Footer({ settings, quickLinks, socialLinks }: FooterProp
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-4 md:col-span-2">
             <Link href="/" className="flex items-center gap-2">
-               <Image
-                src={settings.logoUrl}
-                alt={`${settings.siteName} Logo`}
-                width={150}
-                height={50}
-                className="h-10 w-auto object-contain invert brightness-0"
-                data-ai-hint="logo"
-              />
+               {settings.logoUrl ? (
+                <Image
+                  src={settings.logoUrl}
+                  alt={`${settings.siteName} Logo`}
+                  width={150}
+                  height={50}
+                  className="h-10 w-auto object-contain invert brightness-0"
+                  data-ai-hint="logo"
+                />
+              ) : (
+                <span className="font-bold text-white">{settings.siteName}</span>
+              )}
             </Link>
             <p className="max-w-md text-sm text-gray-400">
               {settings.footerText}

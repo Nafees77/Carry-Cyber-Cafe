@@ -50,14 +50,18 @@ export default function Header({ settings, quickLinks }: HeaderProps) {
     >
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <Image
-            src={settings.logoUrl}
-            alt={`${settings.siteName} Logo`}
-            width={120}
-            height={40}
-            className="h-8 w-auto object-contain"
-            data-ai-hint="logo"
-          />
+          {settings.logoUrl ? (
+            <Image
+              src={settings.logoUrl}
+              alt={`${settings.siteName} Logo`}
+              width={120}
+              height={40}
+              className="h-8 w-auto object-contain"
+              data-ai-hint="logo"
+            />
+          ) : (
+            <span className="font-bold">{settings.siteName}</span>
+          )}
         </Link>
 
         <div className="hidden md:flex items-center gap-6">
@@ -79,13 +83,17 @@ export default function Header({ settings, quickLinks }: HeaderProps) {
               <div className="p-6">
                 <div className="mb-8 flex items-center justify-between">
                    <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
-                      <Image
-                        src={settings.logoUrl}
-                        alt={`${settings.siteName} Logo`}
-                        width={120}
-                        height={40}
-                        className="h-8 w-auto object-contain"
-                      />
+                      {settings.logoUrl ? (
+                        <Image
+                          src={settings.logoUrl}
+                          alt={`${settings.siteName} Logo`}
+                          width={120}
+                          height={40}
+                          className="h-8 w-auto object-contain"
+                        />
+                      ) : (
+                        <span className="font-bold">{settings.siteName}</span>
+                      )}
                     </Link>
                     <Button variant="ghost" size="icon" onClick={() => setIsMobileMenuOpen(false)}>
                         <X className="h-6 w-6" />
