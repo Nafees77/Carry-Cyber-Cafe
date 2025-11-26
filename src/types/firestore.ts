@@ -31,10 +31,7 @@ export interface ChatbotSettings {
 
 export interface Service {
   id: string;
-  titleEN: string;
-  titleHI: string;
-  icon?: string;
-  category: string;
+  content: string;
   order: number;
 }
 
