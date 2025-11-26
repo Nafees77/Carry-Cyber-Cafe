@@ -31,7 +31,9 @@ export default async function Home() {
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <Header settings={settings.general} quickLinks={quickLinks} />
+      <Suspense fallback={<Skeleton className="h-16 w-full" />}>
+        <Header settings={settings.general} quickLinks={quickLinks} />
+      </Suspense>
       <main className="flex-1 container mx-auto">
         <Suspense fallback={<Skeleton className="h-[500px] w-full" />}>
           <MainBanner settings={settings.banners} />

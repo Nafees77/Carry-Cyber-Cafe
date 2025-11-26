@@ -21,12 +21,6 @@ const iconMap: { [key: string]: React.ReactNode } = {
   default: <Monitor className="h-8 w-8 text-primary" />,
 };
 
-const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <h2 className="text-3xl font-bold tracking-tight text-center sm:text-4xl">
-    {children}
-  </h2>
-);
-
 export default function Services({ services }: ServicesProps) {
   if (!services || services.length === 0) {
     return null;
@@ -35,12 +29,7 @@ export default function Services({ services }: ServicesProps) {
   return (
     <section id="services" className="py-12 md:py-20 bg-secondary/20">
       <div className="container">
-        <SectionTitle>Services We Offer</SectionTitle>
-        <p className="mt-4 text-center text-muted-foreground">
-          A wide range of services to meet all your needs.
-        </p>
-
-        <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {services.map((service) => (
             <Card key={service.id} className="transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
               <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2">
