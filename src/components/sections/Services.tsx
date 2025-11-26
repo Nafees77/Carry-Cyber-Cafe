@@ -12,10 +12,11 @@ export default function Services({ services }: ServicesProps) {
   return (
     <section id="services" className="py-12 md:py-20 bg-secondary/20">
       <div className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 justify-items-center">
           {services.map((service) => (
             <div
               key={service.id}
+              className="w-full"
               dangerouslySetInnerHTML={{ __html: service.content }}
             />
           ))}
