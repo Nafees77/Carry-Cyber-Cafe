@@ -36,7 +36,7 @@ async function getCollection<T>(collectionName: string, orderField: string, orde
   }
 }
 
-const defaultGeneralSettings: GeneralSettings = {
+export const defaultGeneralSettings: GeneralSettings = {
   siteName: 'Carry Cyber Cafe',
   logoUrl: PlaceHolderImages.find(p => p.id === 'logo')?.imageUrl || '',
   primaryPhone: '+1 (234) 567-890',
@@ -48,7 +48,7 @@ const defaultGeneralSettings: GeneralSettings = {
   footerText: 'Your premier destination for internet services, gaming, and digital solutions.'
 };
 
-const defaultBannerSettings: BannerSettings = {
+export const defaultBannerSettings: BannerSettings = {
   desktopBanner: PlaceHolderImages.find(p => p.id === 'banner-desktop')?.imageUrl || '',
   tabletBanner: PlaceHolderImages.find(p => p.id === 'banner-tablet')?.imageUrl || '',
   mobileBanner: PlaceHolderImages.find(p => p.id === 'banner-mobile')?.imageUrl || '',
@@ -57,7 +57,7 @@ const defaultBannerSettings: BannerSettings = {
   bannerHeightMobile: '400px',
 };
 
-const defaultChatbotSettings: ChatbotSettings = {
+export const defaultChatbotSettings: ChatbotSettings = {
   enabled: true,
   chatbotIconUrl: PlaceHolderImages.find(p => p.id === 'chatbot-icon')?.imageUrl || '',
   sendTo: 'whatsapp',

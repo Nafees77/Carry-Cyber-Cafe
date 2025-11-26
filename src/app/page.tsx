@@ -10,29 +10,24 @@ import Footer from '@/components/layout/Footer';
 import Chatbot from '@/components/chatbot/Chatbot';
 import { Suspense } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
+import { defaultGeneralSettings, defaultBannerSettings, defaultChatbotSettings } from '@/lib/firestore';
 
 export const revalidate = 60; // Revalidate data every 60 seconds
 
 export default async function Home() {
   const data = await getWebsiteData();
 
-  if (!data) {
-    return (
-      <div className="flex h-screen w-full items-center justify-center bg-background">
-        <p className="text-destructive">Failed to load website data. Please try again later.</p>
-      </div>
-    );
-  }
-
-  const {
-    settings,
-    services,
-    whyChooseUs,
-    reviews,
-    faqs,
-    quickLinks,
-    socialLinks,
-  } = data;
+  const settings = data?.settings ?? {
+    general: defaultGeneralSettings,
+    banners: defaultBannerSettings,
+    chatbot: defaultChatbotSettings,
+  };
+  const services = data?.services ?? [];
+  const whyChooseUs = data?.whyChooseUs ?? [];
+  const reviews = data?.reviews ?? [];
+  const faqs = data?.faqs ?? [];
+  const quickLinks = data?.quickLinks ?? [];
+  const socialLinks = data?.socialLinks ?? {};
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
