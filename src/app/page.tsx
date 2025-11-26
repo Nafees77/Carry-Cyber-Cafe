@@ -1,16 +1,15 @@
 import { getWebsiteData } from '@/lib/firestore';
 import Header from '@/components/layout/Header';
-import MainBanner from '@/components/sections/MainBanner';
 import Services from '@/components/sections/Services';
 import WhyChooseUs from '@/components/sections/WhyChooseUs';
 import Reviews from '@/components/sections/Reviews';
-import Faq from '@/components/sections/Faq';
 import Contact from '@/components/sections/Contact';
 import Footer from '@/components/layout/Footer';
 import Chatbot from '@/components/chatbot/Chatbot';
 import { Suspense } from 'react';
 import { Skeleton } from '@/components/ui/skeleton';
 import { defaultGeneralSettings, defaultChatbotSettings, defaultBannerSettings } from '@/lib/firestore';
+import MainBanner from '@/components/sections/MainBanner';
 
 export const revalidate = 60; // Revalidate data every 60 seconds
 
@@ -25,7 +24,6 @@ export default async function Home() {
   const services = data?.services ?? [];
   const whyChooseUs = data?.whyChooseUs ?? [];
   const reviews = data?.reviews ?? [];
-  const faqs = data?.faqs ?? [];
   const quickLinks = data?.quickLinks ?? [];
   const socialLinks = data?.socialLinks ?? {};
 
@@ -55,10 +53,6 @@ export default async function Home() {
           <Reviews reviews={reviews} />
         </Suspense>
         
-        <Suspense fallback={<PageSectionSkeleton />}>
-          <Faq faqs={faqs} />
-        </Suspense>
-
       </main>
       <Footer settings={settings.general} quickLinks={quickLinks} socialLinks={socialLinks} />
       <Chatbot settings={settings.chatbot} />
