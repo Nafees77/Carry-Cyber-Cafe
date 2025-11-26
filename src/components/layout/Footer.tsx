@@ -44,7 +44,7 @@ export default function Footer({ settings, quickLinks, socialLinks }: FooterProp
           <div>
             <h3 className="text-lg font-semibold text-white">Quick Links</h3>
             <ul className="mt-4 space-y-2">
-              {quickLinks.map((link) => (
+              {quickLinks.filter(link => link.url && link.name).map((link) => (
                 <li key={link.id}>
                   <Link href={link.url} className="text-sm transition-colors hover:text-primary">
                     {link.name}

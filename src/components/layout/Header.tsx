@@ -28,7 +28,7 @@ export default function Header({ settings, quickLinks }: HeaderProps) {
 
   const NavLinks = ({ className }: { className?: string }) => (
     <nav className={cn("flex items-center gap-4 md:gap-6", className)}>
-      {quickLinks.map((link) => (
+      {quickLinks.filter(link => link.url && link.name).map((link) => (
         <Link
           key={link.id}
           href={link.url}
