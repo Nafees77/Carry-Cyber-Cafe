@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { Button } from '../ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '../ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '../ui/sheet';
 import { cn } from '@/lib/utils';
 
 interface HeaderProps {
@@ -80,8 +80,9 @@ export default function Header({ settings, quickLinks }: HeaderProps) {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="p-6">
-                <div className="mb-8 flex items-center justify-between">
+              <SheetHeader className="p-6">
+                <SheetTitle className="sr-only">Mobile Menu</SheetTitle>
+                <div className="flex items-center justify-between">
                    <Link href="/" className="flex items-center gap-2" onClick={() => setIsMobileMenuOpen(false)}>
                       {settings.logoUrl ? (
                         <Image
@@ -100,6 +101,8 @@ export default function Header({ settings, quickLinks }: HeaderProps) {
                         <span className="sr-only">Close menu</span>
                     </Button>
                 </div>
+              </SheetHeader>
+              <div className="p-6 pt-0">
                 <NavLinks className="flex-col items-start space-y-4 text-lg" />
                  <Button asChild className="w-full mt-8">
                     <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Contact Us</Link>
