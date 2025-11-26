@@ -78,7 +78,7 @@ const InfoItem = ({ icon, label, value, href }: { icon: React.ReactNode, label: 
 export default function Contact({ settings }: ContactProps) {
   return (
     <section id="contact" className="py-12 md:py-20">
-      <div className="container">
+      <div className="container mx-auto">
         <h2 className="text-3xl font-bold tracking-tight text-center sm:text-4xl">
           Get in Touch
         </h2>

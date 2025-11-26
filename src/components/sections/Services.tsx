@@ -28,7 +28,7 @@ export default function Services({ services }: ServicesProps) {
 
   return (
     <section id="services" className="py-12 md:py-20 bg-secondary/20">
-      <div className="container">
+      <div className="container mx-auto">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {services.map((service) => (
             <Card key={service.id} className="transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">

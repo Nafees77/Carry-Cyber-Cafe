@@ -13,7 +13,7 @@ export default function WhyChooseUs({ items }: WhyChooseUsProps) {
 
   return (
     <section id="about" className="py-12 md:py-20">
-      <div className="container">
+      <div className="container mx-auto">
         <h2 className="text-3xl font-bold tracking-tight text-center sm:text-4xl">
           Why Choose Us?
         </h2>
