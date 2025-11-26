@@ -9,7 +9,7 @@ interface MainBannerProps {
 
 export default function MainBanner({ settings }: MainBannerProps) {
   return (
-    <section id="home" className="container py-8">
+    <section id="home" className="py-8">
       <div
         className="relative w-full overflow-hidden rounded-xl md:rounded-2xl shadow-lg"
         style={{
@@ -44,7 +44,6 @@ export default function MainBanner({ settings }: MainBannerProps) {
                     data-ai-hint="cyber cafe interior"
                 />
             </picture>
-            <div className="absolute inset-0 bg-black/40" />
         </div>
       </div>
     </section>
