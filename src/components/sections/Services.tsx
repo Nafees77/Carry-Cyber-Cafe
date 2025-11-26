@@ -17,7 +17,7 @@ export default function Services({ services }: ServicesProps) {
             <div
               key={service.id}
               className="w-full"
-              style={{ height: `${service.height || 'auto'}px` }}
+              style={{ height: service.height ? `${service.height}px` : 'auto' }}
               dangerouslySetInnerHTML={{ __html: service.content }}
             />
           ))}
