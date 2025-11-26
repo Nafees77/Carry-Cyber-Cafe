@@ -39,7 +39,7 @@ export default function MainBanner({ settings }: MainBannerProps) {
   [settings.mobileBanner]);
 
   return (
-    <section id="home" className="py-8">
+    <section id="home" className="py-8 block">
       <div
         className="relative w-full overflow-hidden rounded-xl md:rounded-2xl shadow-lg"
         style={{
