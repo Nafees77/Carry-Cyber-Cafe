@@ -14,15 +14,12 @@ export default function Services({ services }: ServicesProps) {
       <div className="container">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 justify-items-center">
           {services.map((service) => (
-            <div key={service.id} className="w-full">
-              <iframe
-                srcDoc={service.content}
-                className="w-full border-0"
-                style={{ height: `${service.height || 250}px` }}
-                title={service.id}
-                sandbox="" // Added for extra security
-              />
-            </div>
+            <div
+              key={service.id}
+              className="w-full"
+              style={{ height: `${service.height || 'auto'}px` }}
+              dangerouslySetInnerHTML={{ __html: service.content }}
+            />
           ))}
         </div>
       </div>
