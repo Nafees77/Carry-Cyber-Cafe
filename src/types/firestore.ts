@@ -33,6 +33,7 @@ export interface Service {
   id: string;
   content: string;
   order: number;
+  height: number;
 }
 
 export interface WhyChooseUsItem {
