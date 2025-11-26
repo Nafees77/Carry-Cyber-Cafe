@@ -29,17 +29,17 @@ export default function Services({ services }: ServicesProps) {
   return (
     <section id="services" className="py-12 md:py-20 bg-secondary/20">
       <div className="container text-center">
-        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+        <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4 justify-items-center">
           {services.map((service) => (
-            <Card key={service.id} className="transform transition-transform duration-300 hover:scale-105 hover:shadow-xl text-left">
-              <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2">
+            <Card key={service.id} className="w-full transform transition-transform duration-300 hover:scale-105 hover:shadow-xl text-left">
+              <CardHeader className="flex flex-row items-center gap-2 sm:gap-4 p-3 sm:p-6 space-y-0 pb-2">
                 {iconMap[service.icon?.toLowerCase() || 'default']}
-                <CardTitle className="text-base font-semibold leading-tight">
+                <CardTitle className="text-sm sm:text-base font-semibold leading-tight">
                   {service.titleEN}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-xs text-muted-foreground ml-12 -mt-2">
+              <CardContent className="p-3 sm:p-6 pt-0 sm:pt-0">
+                <p className="text-xs text-muted-foreground ml-10 sm:ml-12 -mt-2">
                   {service.titleHI}
                 </p>
               </CardContent>
