@@ -18,7 +18,7 @@ export default function Services({ services }: ServicesProps) {
               key={service.id}
               className="w-full"
               dangerouslySetInnerHTML={{ __html: service.content }}
-            />
+            ></div>
           ))}
         </div>
       </div>
