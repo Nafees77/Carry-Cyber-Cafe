@@ -2,7 +2,7 @@
 
 import { MessageCircle } from 'lucide-react';
 import Image from 'next/image';
-import { useFormState } from 'react-dom';
+import { useActionState } from 'react';
 import { useEffect, useRef } from 'react';
 
 import type { ChatbotSettings } from '@/types/firestore';
@@ -28,7 +28,7 @@ function SubmitButton() {
 }
 
 export default function Chatbot({ settings }: ChatbotProps) {
-  const [state, dispatch] = useFormState(submitChatbotForm, { success: false });
+  const [state, dispatch] = useActionState(submitChatbotForm, { success: false });
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
 

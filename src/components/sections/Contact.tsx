@@ -1,6 +1,6 @@
 "use client"
 
-import { useFormState } from 'react-dom';
+import { useActionState } from 'react';
 import { useEffect, useRef } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { submitContactForm } from '@/app/actions';
@@ -17,7 +17,7 @@ interface ContactProps {
 }
 
 function ContactForm() {
-  const [state, dispatch] = useFormState(submitContactForm, { success: false });
+  const [state, dispatch] = useActionState(submitContactForm, { success: false });
   const { toast } = useToast();
   const formRef = useRef<HTMLFormElement>(null);
 
