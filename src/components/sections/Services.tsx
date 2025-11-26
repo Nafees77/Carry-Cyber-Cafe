@@ -1,4 +1,5 @@
 import type { Service } from '@/types/firestore';
+import Image from 'next/image';
 
 interface ServicesProps {
   services: Service[];
@@ -12,14 +13,17 @@ export default function Services({ services }: ServicesProps) {
   return (
     <section id="services" className="py-16 md:py-24 bg-secondary/20">
       <div className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 justify-items-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 justify-items-center items-center">
           {services.map((service) => (
-            <div
-              key={service.id}
-              className="w-full"
-              style={{ height: service.height ? `${service.height}px` : 'auto' }}
-              dangerouslySetInnerHTML={{ __html: service.content }}
-            />
+            <div key={service.id} className="w-full flex justify-center">
+              <Image
+                src={service.src}
+                alt={`Service image ${service.order}`}
+                width={service.width || 300}
+                height={service.height || 200}
+                className="rounded-lg object-cover shadow-md"
+              />
+            </div>
           ))}
         </div>
       </div>

@@ -31,8 +31,9 @@ export interface ChatbotSettings {
 
 export interface Service {
   id: string;
-  content: string;
+  src: string;
   order: number;
+  width: number;
   height: number;
 }
 
